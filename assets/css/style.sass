@@ -71,19 +71,25 @@ header
 .body
   .filter-wrapper
     width: 100%
-    background: black
+    background: gainsboro
     padding: 15px 0
     .filter
       width: 1000px
       margin: auto
       text-align: center
-      select.form-control
+      .dropdown
         display: inline-block
-        margin: 0 10px
-        width: auto
-        border-radius: 0
-        min-width: 150px
-        text-transform: uppercase
+        button
+          min-width: 160px
+          text-transform: uppercase
+          text-align: left
+          background: #fff
+          .fa
+            font-size: 150%
+            line-height: 8px
+            float: right
+            margin-top: 6px
+
 
 #home-slider
   margin: 45px 0 0 !important
@@ -134,12 +140,17 @@ header
 
 .event-tab
   li.active a:focus, li a:hover, li.active a:hover, li.active a
-    background-color: gainsboro
+    border: 0 !important
+    border-top: 5px solid orange !important
+    background-color: #808080
+    color: #fff
   li a
+    border: 0
+    border-bottom: 0 !important
+    border-top: 5px solid #4a4a4a
     border-radius: 0 !important
-    border-width: 0 !important
     padding: 35px 30px 15px
-    background-color: #ccc
+    background-color: #4a4a4a
     text-transform: uppercase
     text-align: right !important
     font-size: 150%
@@ -202,7 +213,7 @@ header
     .footer-button-2
       background: #777
       border-width: 0px
-      width: 150px 
+      width: 150px
       margin-left: 20px
   .column-gap
     width: 16.7%

@@ -6,6 +6,8 @@
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
     <!-- SLICK -->
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css">
@@ -68,27 +70,27 @@
         </div>
       </div>
 
-      <div class="filter-wrapper">
-        <div class="filter">
-          <select class="form-control" name="">
-            <option>countries</option>
-          </select>
-          <select class="form-control" name="">
-            <option>categories</option>
-          </select>
-          <select class="form-control" name="">
-            <option>colours</option>
-          </select>
-          <select class="form-control" name="">
-            <option>contents</option>
-          </select>
-        </div>
-      </div>
-
       <ul class="nav event-tab nav-tabs nav-justified">
         <li class="active"><a href="#">present event</a></li>
         <li><a href="#">upcoming event</a></li>
       </ul>
+
+      <div class="filter-wrapper">
+        <div class="filter">
+          <span>SEARCH FOR</span>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="vendor-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Vendor
+              <span class="fa fa-2 fa-angle-down"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="vendor-dropdown">
+              <li><a>Event</a></li>
+              <li><a>EO</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div id = "content" class = "clearfix">
         <div class = "event-main">
           <div class = "event-img">
@@ -157,7 +159,7 @@
           </div>
         </div>
       </div>
-    </div> 
+    </div>
     <footer class = "clearfix page-footer">
       <div class = "footer-content">
         <div class = "column-1">
@@ -188,6 +190,7 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script type="text/javascript" src="./assets/slick/slick.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
 
     <script>
     let homeSliderHeight = document.getElementsByClassName('slide-img')[0].clientHeight
