@@ -1,5 +1,5 @@
 *
-  font-family: 'Roboto', sans-serif
+  //font-family: 'Roboto', sans-serif
   -webkit-transition:all.4s ease
   -moz-transition:all .4s ease
   -o-transition:all .4s ease
@@ -146,7 +146,7 @@ header
     font-weight: bold
 
 //Ferdiyan
-#content
+#content-wrapper
   width: 100%
   padding-left: 40px
   padding-right: 40px
@@ -158,21 +158,32 @@ header
     float: left
     .event-img
       background-color: #aaa
-      height: 500px
-    .event-info
-      background-color: #ddd
+      height: 250px
+    .event-info, .event-tags
       padding-top: 10px
       padding-left: 20px
       padding-bottom: 10px
+    .event-info
+      background-color: #fff
+      border-left: 1px solid #ddd
+      border-right: 1px solid #ddd
       overflow: auto
-      .event-info-img
-        background-color: #bbb
-        width: 75px
-        height: 75px
-        border-radius: 50%
-        float: left
-        margin-right: 20px
-
+      .event-date, .event-location, .event-name
+        margin: 0
+        margin-bottom: 5px
+      .event-date, .event-location
+        font-size: 16px
+        font-weight: 500
+      .event-name
+        font-weight: 700
+    .event-tags
+        background-color: #FAA819
+        border: 1px solid #ddd
+        .tags
+          color: white
+          font-size: 16px
+          font-weight: 500
+          margin: 0
 .event-title
   font-weight: bold
   padding-top: 20px
@@ -194,16 +205,17 @@ header
   .column-1
     width: 33.3%
     float: left
-    .footer-button-1
-      background: #ddd
+    .footer-button-1, .footer-button-2
       border-width: 0px
       width: 150px
+      height: 40px
+      margin-top: 20px
       margin-right: 20px
+      border-radius: 5px
+    .footer-button-1
+      background: #FAA819
     .footer-button-2
-      background: #777
-      border-width: 0px
-      width: 150px 
-      margin-left: 20px
+      background: #ccc
   .column-gap
     width: 16.7%
     float: left
@@ -214,3 +226,42 @@ header
       font-weight: bold
       margin-top: 0px
       margin-bottom: 20px
+@media screen and (min-width: 1824px)
+ #content-wrapper
+    width: 1600px
+    margin: 0 auto
+    .event-main
+      width: 25%
+@media screen and (min-width: 1224px)
+ #content-wrapper
+    width: 1200px
+    margin: 0 auto
+    .event-main
+      width: 33.3%
+@media screen and (max-width: 1223px)
+  #content-wrapper
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    .event-main
+      width: 33.3%
+@media screen and (max-width: 1024px)
+  #content-wrapper
+    width: 800px
+    margin: 0 auto
+    .event-main
+      width: 50%
+@media screen and (max-width: 768px)
+  #content-wrapper
+    width: 400px
+    margin: 0 auto
+    .event-main
+      width: 100%
+@media screen and (max-width: 400px)
+  #content-wrapper
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    .event-main
+      width: 100%
+
