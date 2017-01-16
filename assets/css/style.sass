@@ -1,12 +1,58 @@
+$primary-color: #FAA819
+$secondary-color: #F05A28
+
+@for $i from 0 to 100
+  @if $i % 5 == 0
+    .padding-#{$i}
+      padding: #{$i}px
+    .padding-left-#{$i}
+      padding-left: #{$i}px
+    .padding-right-#{$i}
+      padding-right: #{$i}px
+    .padding-top-#{$i}
+      padding-top: #{$i}px
+    .padding-bottom-#{$i}
+      padding-left: #{$i}px
+
+    .margin-#{$i}
+      margin: #{$i}px
+    .margin-left-#{$i}
+      margin-left: #{$i}px
+    .margin-right-#{$i}
+      margin-right: #{$i}px
+    .margin-top-#{$i}
+      margin-top: #{$i}px
+    .margin-bottom-#{$i}
+      margin-left: #{$i}px
+
+
+@mixin gradient($color1, $color2)
+    background: $color1
+    background: -webkit-linear-gradient($color1, $color2)
+    background: -o-linear-gradient($color1, $color2)
+    background: -moz-linear-gradient($color1, $color2)
+    background: linear-gradient($color1, $color2)
+
+@mixin transition($prop, $time, $type)
+  -webkit-transition:$prop $time $type
+  -moz-transition:$prop $time $type
+  -o-transition:$prop $time $type
+  transition:$prop $time $type
+
+@mixin blur($amount)
+  -webkit-filter: blur($amount)
+  -moz-filter: blur($amount)
+  -o-filter: blur($amount)
+  -ms-filter: blur($amount)
+  filter: blur($amount)
+
+// START STYLE
 *
-  font-family: 'Roboto', sans-serif
-  -webkit-transition:all.4s ease
-  -moz-transition:all .4s ease
-  -o-transition:all .4s ease
-  transition:all .4s ease
+  @include transition(all, .4s, ease)
 
 body
   margin: 0
+  font-family: 'Roboto', sans-serif
 
 .pull-left
   float: left
@@ -20,16 +66,23 @@ body
 .text-right
   text-align: right
 
+.btn
+  @include transition(all, .1s, ease)
+
+.btn-primary, .btn-primary:focus
+  @include gradient($primary-color, $secondary-color)
+  border-width: 0
+
 // MARGIN & PADDING
 
 header
+  @include gradient($primary-color, $secondary-color)
   position: fixed
   z-index: 10000
   top: 0
   width: 100%
   font-size: 13px
   text-align: center
-  background: #000000
   color: #fff
   transition: all 0.4s ease
   .wrapper
@@ -38,22 +91,36 @@ header
     .pull-right .vendor-wrapper
       float: left
       position: relative
-    a
-      padding: 15px 0
+    a, button
       margin: 0 25px
       float: left
       position: relative
-      color: white
+      color: #fff
+    a
+      padding: 15px 0
+    .btn-mobile
+      display: none
+    button
+      margin: 7.5px
+      padding: 3px 15px
+      border-radius: 20px
+      background: $primary-color
+    .btn.focus, .btn:focus, .btn:hover
+      color: #fff
+    a.logo
+      padding: 0
+      img
+        width: 80px
     a:hover
       text-decoration: none
-      color: white
+      color: #fff
       cursor: pointer
     a:first-child
       margin-left: 0
     a:last-child
       margin-right: 0
     .separator
-      border-right: 1px solid white
+      border-right: 1px solid #fff
       display: block
       height: 15px
       top: 17px
@@ -68,28 +135,39 @@ header
   top: 45px
   opacity: 0.9
 
-.body
-  .filter-wrapper
-    width: 100%
-    background: gainsboro
-    padding: 15px 0
-    .filter
-      width: 1000px
-      margin: auto
-      text-align: center
-      .dropdown
-        display: inline-block
-        button
-          min-width: 160px
-          text-transform: uppercase
-          text-align: left
-          background: #fff
-          .fa
-            font-size: 150%
-            line-height: 8px
-            float: right
-            margin-top: 6px
-
+.filter-wrapper
+  width: 100%
+  background: gainsboro
+  padding: 15px 0
+  position: fixed
+  top: 48px
+  opacity: .88
+  z-index: 10000
+  .filter
+    width: 1000px
+    margin: auto
+    text-align: center
+    button
+      min-width: 110px
+    .dropdown
+      display: inline-block
+      margin: 0 1.93px
+      ul
+        width: 100%
+        min-width: 0px
+      button
+        min-width: 100px
+        text-transform: capitalize
+        text-align: left
+        background: #fff
+        span
+          padding: 0 20px 0 0
+        .fa
+          font-size: 150%
+          line-height: 8px
+          float: right
+          margin-top: 6px
+          padding: 0
 
 #home-slider
   margin: 45px 0 0 !important
@@ -99,7 +177,7 @@ header
     left: 25px !important
     z-index: 1
   .slick-dots
-    top: 45%
+    bottom: 10%
     right: 9%
     width: 60%
     text-align: right
@@ -108,7 +186,7 @@ header
       button:before
         opacity: 0.8
         font-size: 16px
-        color: white
+        color: #fff
         -webkit-transition:all 1s ease
         -moz-transition:all 1s ease
         -o-transition:all 1s ease
@@ -125,39 +203,39 @@ header
     .text-overlay
       position: absolute
       text-align: right
-      top: 25%
+      top: 38%
       right: 10%
       .title, .sub-title
         text-transform: uppercase
         font-size: 35px
-        color: white
+        color: #fff
       .title
         font-weight: bold
 
-@media screen and (max-width: 1023px)
-  header .wrapper, .filter-wrapper .filter, .slick-slide img
-    width: 750px
+// @media screen and (max-width: 1023px)
+//   header .wrapper, .filter-wrapper .filter, .slick-slide img
+//     width: 750px
 
 .event-tab
+  li:first-child a
+    background-image: url('../img/present_event.png')
+  li:last-child a
+    background-image: url('../img/upcoming_event.png')
   li.active a:focus, li a:hover, li.active a:hover, li.active a
     border: 0 !important
-    border-top: 5px solid orange !important
-    background-color: #808080
+
     color: #fff
   li a
+    background-size: cover
     border: 0
-    border-bottom: 0 !important
-    border-top: 5px solid #4a4a4a
-    border-radius: 0 !important
     padding: 35px 30px 15px
-    background-color: #4a4a4a
     text-transform: uppercase
     text-align: right !important
     font-size: 150%
     font-weight: bold
 
 //Ferdiyan
-#content
+#content-wrapper
   width: 100%
   padding-left: 40px
   padding-right: 40px
@@ -169,21 +247,32 @@ header
     float: left
     .event-img
       background-color: #aaa
-      height: 500px
-    .event-info
-      background-color: #ddd
+      height: 250px
+    .event-info, .event-tags
       padding-top: 10px
       padding-left: 20px
       padding-bottom: 10px
+    .event-info
+      background-color: #fff
+      border-left: 1px solid #ddd
+      border-right: 1px solid #ddd
       overflow: auto
-      .event-info-img
-        background-color: #bbb
-        width: 75px
-        height: 75px
-        border-radius: 50%
-        float: left
-        margin-right: 20px
-
+      .event-date, .event-location, .event-name
+        margin: 0
+        margin-bottom: 5px
+      .event-date, .event-location
+        font-size: 16px
+        font-weight: 500
+      .event-name
+        font-weight: 700
+    .event-tags
+        background-color: $primary-color
+        border: 1px solid #ddd
+        .tags
+          color: #fff
+          font-size: 16px
+          font-weight: 500
+          margin: 0
 .event-title
   font-weight: bold
   padding-top: 20px
@@ -198,23 +287,24 @@ header
 .footer-content
   max-width: 1200px
   margin: 0 auto
-  color: white
+  color: #fff
   padding-top: 50px
   padding-bottom: 50px
   overflow: auto
   .column-1
     width: 33.3%
     float: left
-    .footer-button-1
-      background: #ddd
+    .footer-button-1, .footer-button-2
       border-width: 0px
       width: 150px
+      height: 40px
+      margin-top: 20px
       margin-right: 20px
+      border-radius: 5px
+    .footer-button-1
+      background: $primary-color
     .footer-button-2
-      background: #777
-      border-width: 0px
-      width: 150px
-      margin-left: 20px
+      background: #ccc
   .column-gap
     width: 16.7%
     float: left
@@ -225,3 +315,79 @@ header
       font-weight: bold
       margin-top: 0px
       margin-bottom: 20px
+@media (min-width: 480px)
+  header .wrapper, .filter-wrapper .filter, .slick-slide img
+    width: 1600px
+  #content-wrapper
+    width: 1600px
+    margin: 0 auto
+    .event-main
+      width: 25%
+@media screen and (min-width: 1824px)
+  header .wrapper, .filter-wrapper .filter, .slick-slide img
+    width: 1600px
+  #content-wrapper
+    width: 1600px
+    margin: 0 auto
+    .event-main
+      width: 25%
+
+@media screen and (min-width: 1224px)
+  header .wrapper, .filter-wrapper .filter, .slick-slide img
+    width: 1200px
+  #content-wrapper
+    width: 1200px
+    margin: 0 auto
+    .event-main
+      width: 33.3%
+
+@media screen and (max-width: 1223px)
+  #content-wrapper
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    .event-main
+      width: 33.3%
+  header .wrapper, .filter-wrapper .filter, .slick-slide img
+    width: 100%
+@media screen and (max-width: 1024px)
+  #content-wrapper
+    width: 800px
+    margin: 0 auto
+    .event-main
+      width: 50%
+  header .wrapper, .filter-wrapper .filter, .slick-slide img
+    width: 800px
+  .btn-primary
+    margin-top: 10px
+    width: 40%
+  #home-slider
+    margin: 153px 0 0 !important
+@media screen and (max-width: 768px)
+  #content-wrapper
+    width: 400px
+    margin: 0 auto
+    .event-main
+      width: 100%
+  header .wrapper, .filter-wrapper .filter, .slick-slide img
+    width: 400px
+  .filter-wrapper .filter
+    .dropdown, .dropdown button
+      width: 100%
+  #home-slider
+    margin: 310px 0 0 !important
+  .nav-mobile
+    display: none
+  .wrapper .btn-mobile
+    display: block !important
+  .btn-mobile:hover
+    .nav-mobile
+      display: block
+
+@media screen and (max-width: 400px)
+  #content-wrapper
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    .event-main
+      width: 100%
