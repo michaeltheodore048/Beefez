@@ -94,42 +94,51 @@
       </div>
     </div>
 
-    <div class="body">
-      <div id="home-slider" class="slider slick-dotted">
-        <div>
-          <img class="slide-img" src="./assets/img/slider1.png" alt="slide">
-          <div class="text-overlay">
-            <span class="title">event organizer</span><br>
-            <span class="sub-title">special promo this year</span>
-          </div>
+    <div class="body top-fix">
+      <div class = "category-wrapper">
+        <div class = "category clearfix">
+          <button class = "no-border-button category-button right">
+            <span>Event Categories</span>
+            <span class="fa fa-2 fa-angle-down"></span>
+          </button>
         </div>
-        <div>
-          <img class="slide-img" src="./assets/img/slider1.png" alt="slide">
-          <div class="text-overlay">
-            <span class="title">event organizer</span><br>
-            <span class="sub-title">special promo this year</span>
+      </div>
+      <div class = "category-wrapper clearfix">
+        <div class = "category-list width-wrap">
+          <div class = "category-data">
+            <ul>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+            </ul>
           </div>
-        </div>
-        <div>
-          <img class="slide-img" src="./assets/img/slider1.png" alt="slide">
-          <div class="text-overlay">
-            <span class="title">event organizer</span><br>
-            <span class="sub-title">special promo this year</span>
+          <div class = "category-data">
+            <ul>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+            </ul>
           </div>
-        </div>
-        <div>
-          <img class="slide-img" src="./assets/img/slider1.png" alt="slide">
-          <div class="text-overlay">
-            <span class="title">event organizer</span><br>
-            <span class="sub-title">special promo this year</span>
+          <div class = "category-data">
+            <ul>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+            </ul>
+          </div>
+          <div class = "category-data">
+            <ul>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+            </ul>
           </div>
         </div>
       </div>
-
-      <ul class="nav event-tab nav-tabs nav-justified">
-        <li class="active"><a href="#">present event</a></li>
-        <li><a href="#">upcoming event</a></li>
-      </ul>
       <div class="content-filter-wrapper">
         <div class = "content-filter width-wrap">
           <div class="dropdown right-border">
@@ -174,6 +183,9 @@
             </ul>
           </div>
         </div>
+      </div>
+      <div class = selected-filters>
+        <p class = bold>ALL CATEGORIES <span style = "color:#bbb">EO IN </span>ALL COUNTRIES, ALL CITIES & ALL BUDGET</p>
       </div>
       <div id = "content-wrapper" class = "clearfix">
         <div class = "event-main">
@@ -250,7 +262,7 @@
         </div>
       </div>
     </div>
-    <footer class = "clearfix page-footer">
+    <footer class = "clearfix page-footer top-fix">
       <div class = "footer-content">
         <div class = "column-1">
           <p><span style = "font-weight: bold">Lorem Ipsum Lorem Ipsum Lorem</span><span style = "color: #ddd"> Ipsum Lorem Ipsum Lorem</span></p>
@@ -278,27 +290,15 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/slick/slick.js"></script>
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
 
     <script>
-    let homeSliderHeight = document.getElementsByClassName('slide-img')[0].clientHeight
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > homeSliderHeight+45){
-        $('.filter-wrapper').addClass("sticky");
-      }
-      else{
-        $('.filter-wrapper').removeClass("sticky");
-      }
-    });
-
-    $('#home-slider').slick({
-      dots: true,
-      infinite: true,
-      speed: 500,
-      fade: true,
-      cssEase: 'linear'
+    $(document).ready(function(){
+      $(".category-button").click(function(){
+          $(".category-list").toggle();
+      });
     });
     </script>
   </body>

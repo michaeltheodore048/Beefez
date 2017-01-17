@@ -34,10 +34,10 @@ $secondary-color: #F05A28
     background: linear-gradient($color1, $color2)
 
 @mixin transition($prop, $time, $type)
-  -webkit-transition:$prop $time $type
-  -moz-transition:$prop $time $type
-  -o-transition:$prop $time $type
-  transition:$prop $time $type
+  -webkit-transition: $prop $time $type
+  -moz-transition: $prop $time $type
+  -o-transition: $prop $time $type
+  transition: $prop $time $type
 
 @mixin blur($amount)
   -webkit-filter: blur($amount)
@@ -316,7 +316,7 @@ header
       margin-top: 0px
       margin-bottom: 20px
 @media (min-width: 480px)
-  header .wrapper, .filter-wrapper .filter, .slick-slide img
+  header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 1600px
   #content-wrapper
     width: 1600px
@@ -324,7 +324,7 @@ header
     .event-main
       width: 25%
 @media screen and (min-width: 1824px)
-  header .wrapper, .filter-wrapper .filter, .slick-slide img
+  header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 1600px
   #content-wrapper
     width: 1600px
@@ -333,7 +333,7 @@ header
       width: 25%
 
 @media screen and (min-width: 1224px)
-  header .wrapper, .filter-wrapper .filter, .slick-slide img
+  header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 1200px
   #content-wrapper
     width: 1200px
@@ -348,7 +348,7 @@ header
     padding-right: 10px
     .event-main
       width: 33.3%
-  header .wrapper, .filter-wrapper .filter, .slick-slide img
+  header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 100%
 @media screen and (max-width: 1024px)
   #content-wrapper
@@ -356,7 +356,7 @@ header
     margin: 0 auto
     .event-main
       width: 50%
-  header .wrapper, .filter-wrapper .filter, .slick-slide img
+  header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 800px
   .btn-primary
     margin-top: 10px
@@ -369,7 +369,7 @@ header
     margin: 0 auto
     .event-main
       width: 100%
-  header .wrapper, .filter-wrapper .filter, .slick-slide img
+  header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 400px
   .filter-wrapper .filter
     .dropdown, .dropdown button
@@ -391,3 +391,136 @@ header
     padding-right: 10px
     .event-main
       width: 100%
+.top-fix
+  top: 112px
+  position: relative
+.no-border-button
+  border: none
+  background: none
+  padding: 5px
+  outline: none
+  span
+    padding-right: 20px
+    font-size: 120%
+  .fa
+    font-size: 150%
+.category
+  margin: auto
+  padding: 20px 0
+.category-wrapper
+  width: 100%
+  border-bottom: solid 1px #ddd
+.right
+  float: right
+.category-data
+  width: 25%
+  float: left
+  font-size: 120%
+  ul
+    list-style-type: none
+    li
+      padding: 10px 0
+.width-wrap
+  margin: auto
+.category-list
+  padding: 20px 0
+  text-align: center
+  display: none
+.content-filter-wrapper
+  width: 100%
+  border-bottom: solid 1px #ddd
+.content-filter
+  margin: auto
+  text-align: center
+  padding: 10px 0
+  .dropdown
+    display: inline-block
+    margin: 0 1.93px
+    padding-left: 40px
+    padding-right: 20px
+  .right-border
+    border-right: solid 1px #aaa
+.selected-filters
+  text-align: center
+  padding-top: 40px
+  padding-bottom: 20px
+.bold
+  font-weight: 700
+.eo-wrapper
+  width: 25%
+  padding: 0px 10px
+  margin-top: 30px
+  float: left
+  .eo-main
+    padding: 20px 0
+    border: solid 1px #ddd
+    .eo-img
+      background-color: #FAA819
+      width: 50%
+      padding-top: 50%
+      border-radius: 50%
+      margin: auto
+    .eo-name
+      color: #FAA819
+      text-align: center
+      h3
+        font-weight: bold
+    .eo-info
+      text-align: center
+      p
+        font-weight: bold
+    .eo-rating
+      font-size: 150%
+      color: #FAA819
+      text-align: center
+      .rating-pad
+        padding: 0 10px
+    .eo-button
+      padding-top: 20px
+      .btn
+        margin: auto
+        width: 80%
+        background-color: #FAA819
+        color: white
+        font-weight: bold
+        font-size: 80% 
+        padding: 10px 0
+.vendor-wrapper
+  width: 25%
+  padding: 0px 10px
+  margin-top: 30px
+  float: left
+  .vendor-main
+    padding: 20px 0
+    border: solid 1px #ddd
+    .vendor-img
+      background-color: #FAA819
+      width: 50%
+      padding-top: 50%
+      border-radius: 50%
+      margin: auto
+    .vendor-name
+      color: #FAA819
+      text-align: center
+      h3
+        font-weight: bold
+    .vendor-info
+      text-align: center
+      p
+        font-weight: bold
+    .vendor-rating
+      font-size: 150%
+      color: #FAA819
+      text-align: center
+      .rating-pad
+        padding: 0 10px
+    .vendor-button
+      padding-top: 20px
+      .btn
+        margin: auto
+        width: 80%
+        background-color: #FAA819
+        color: white
+        font-weight: bold
+        font-size: 80% 
+        padding: 10px 0
