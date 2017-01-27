@@ -137,10 +137,11 @@ header
 
 .filter-wrapper
   width: 100%
-  background: gainsboro
+  background: dimgray
   padding: 15px 0
   position: fixed
   top: 48px
+  display: block
   opacity: .88
   z-index: 10000
   .filter
@@ -171,6 +172,7 @@ header
 
 #home-slider
   margin: 45px 0 0 !important
+  border-bottom: 1px solid white
   .slick-next
     right: 25px !important
   .slick-prev
@@ -219,8 +221,10 @@ header
 .event-tab
   li:first-child a
     background-image: url('../img/present_event.png')
+    border-radius: 0px
   li:last-child a
     background-image: url('../img/upcoming_event.png')
+    border-radius: 0px
   li.active a:focus, li a:hover, li.active a:hover, li.active a
     border: 0 !important
 
@@ -236,9 +240,6 @@ header
 
 //Ferdiyan
 #content-wrapper
-  width: 100%
-  padding-left: 40px
-  padding-right: 40px
   .event-main
     width: 33.3%
     padding-left: 10px
@@ -331,7 +332,11 @@ header
     margin: 0 auto
     .event-main
       width: 25%
-
+  #content-wrapper-2
+    width: 1800px
+    margin: 0 auto
+    .eo-wrapper, .vendor-wrapper
+      width: 16.66666%
 @media screen and (min-width: 1224px)
   header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 1200px
@@ -340,7 +345,11 @@ header
     margin: 0 auto
     .event-main
       width: 33.3%
-
+  #content-wrapper-2
+    width: 1200px
+    margin: 0 auto
+    .eo-wrapper, .vendor-wrapper
+      width: 25%
 @media screen and (max-width: 1223px)
   #content-wrapper
     width: 100%
@@ -348,6 +357,12 @@ header
     padding-right: 10px
     .event-main
       width: 33.3%
+  #content-wrapper-2
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    .eo-wrapper, .vendor-wrapper
+      width: 25%
   header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 100%
 @media screen and (max-width: 1024px)
@@ -355,6 +370,11 @@ header
     width: 800px
     margin: 0 auto
     .event-main
+      width: 50%
+  #content-wrapper-2
+    width: 600px
+    margin: 0 auto
+    .eo-wrapper, .vendor-wrapper
       width: 50%
   header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
     width: 800px
@@ -369,13 +389,99 @@ header
     margin: 0 auto
     .event-main
       width: 100%
-  header .wrapper, .filter-wrapper .filter, .slick-slide img, .category, .width-wrap
+  .top-fix
+    top: 108px !important
+    position: relative
+  .selected-filters
+    padding-bottom: 0px !important
+  #content-wrapper-2
+    width: 600px
+    margin: 0 auto
+    .eo-wrapper, .vendor-wrapper
+      width: 50%
+  .modal-content
+    width: 100% !important
+    margin: auto !important
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* optional */
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    .modal-content-1
+      width: 100% !important
+      -webkit-box-ordinal-group: 3
+      -moz-box-ordinal-group: 3
+      -ms-flex-order: 3
+      -webkit-order: 3
+      order: 3
+      .modal-content-wrapper
+        .modal-logo
+          display: none
+        .login-text
+          margin-top: 30px
+          font-size: large
+    .modal-content-3
+      width: 100% !important
+      display: block !important
+      -webkit-box-ordinal-group: 1
+      -moz-box-ordinal-group: 1
+      -ms-flex-order: 1
+      -webkit-order: 1
+      order: 1
+    .modal-content-2
+      width: 100% !important
+      -webkit-box-ordinal-group: 2
+      -moz-box-ordinal-group: 2
+      -ms-flex-order: 2
+      -webkit-order: 2
+      order: 2
+      .modal-content-container
+        position: static !important
+        top: 0% !important
+        transform: translateY(0%) !important
+        .modal-content-wrapper
+          width: 50% !important
+          h5
+            padding-top: 20px !important
+            font-size: large
+          .button-container
+            padding: 0 40px
+        .modal-content-detail
+          margin-top: 30px !important
+          margin-bottom: 30px
+  .body
+    top: 48px
+    position: relative
+  .category-wrapper
+    display: none
+  header .wrapper
+    display: none
+  .mobile-nav
+    width: 400px
+    display: block !important
+  .mobile-nav-2
+    display: block !important
+  .filter-wrapper
+    background: black
+    display: none
+  .filter-wrapper .filter, .slick-slide img, .category, .width-wrap,
     width: 400px
   .filter-wrapper .filter
     .dropdown, .dropdown button
       width: 100%
   #home-slider
-    margin: 310px 0 0 !important
+    margin: 0 !important
   .nav-mobile
     display: none
   .wrapper .btn-mobile
@@ -383,13 +489,20 @@ header
   .btn-mobile:hover
     .nav-mobile
       display: block
-
+  .datepicker-field
+    width: 100% !important
+    padding: 6px 12px !important
 @media screen and (max-width: 400px)
   #content-wrapper
     width: 100%
     padding-left: 10px
     padding-right: 10px
     .event-main
+      width: 100%
+  #content-wrapper-2
+    width: 300px
+    margin: 0 auto
+    .eo-wrapper, .vendor-wrapper
       width: 100%
 .top-fix
   top: 112px
@@ -455,11 +568,20 @@ header
     padding: 20px 0
     border: solid 1px #ddd
     .eo-img
-      background-color: #FAA819
-      width: 50%
-      padding-top: 50%
-      border-radius: 50%
+      border: 1px solid #FAA819
       margin: auto
+      width: 200px
+      height: 200px
+      border-radius: 100px
+      //background-image: url('../img/eo.png')
+      //background-position: 50% 50%;
+      //background-size: 120px
+      //background-repeat: no-repeat
+      img
+        height: 120px
+        width: 120px
+        margin-left: 40px
+        margin-top: 40px
     .eo-name
       color: #FAA819
       text-align: center
@@ -494,11 +616,20 @@ header
     padding: 20px 0
     border: solid 1px #ddd
     .vendor-img
-      background-color: #FAA819
-      width: 50%
-      padding-top: 50%
-      border-radius: 50%
+      border: 1px solid #FAA819
       margin: auto
+      width: 200px
+      height: 200px
+      border-radius: 100px
+      //background-image: url('../img/eo.png')
+      //background-position: 50% 50%;
+      //background-size: 120px
+      //background-repeat: no-repeat
+      img
+        height: 120px
+        width: 120px
+        margin-left: 40px
+        margin-top: 40px
     .vendor-name
       color: #FAA819
       text-align: center
@@ -524,3 +655,199 @@ header
         font-weight: bold
         font-size: 80% 
         padding: 10px 0
+.daterangepicker.dropdown-menu
+  z-index: 20000
+.datepicker-field
+  width: 175px
+  margin: 0 1.93px
+  display: inline-block
+  padding: 6px 3px
+  border-width: 1px
+  border-radius: 4px
+  border-color: #ccc
+.mobile-nav
+  display: none
+  margin: auto
+  .search
+    float: left
+    color: white
+    width: 25%
+    .fa-search
+      font-size: 150%
+      padding-top: 12px
+  a.logo
+    padding: 0
+  img
+    width: 80px
+  .logo-wrap
+    float: left
+    width: 50%
+  .pull-right
+    width: 25%
+    button
+      margin: 7.5px
+      padding: 3px 15px
+      border-radius: 20px
+      background: $primary-color
+.mobile-nav-2
+  z-index: 10000
+  background-color: black
+  opacity: 0.8
+  top: 48px
+  position: fixed
+  display: none
+  width: 100%
+  a
+    float: left
+    width: 33.3333%
+    text-align: center
+    padding: 20px
+    color: white
+    font-weight: bold
+.transparent-button
+  background: transparent
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+.modal 
+  display: none; 
+  position: fixed
+  z-index: 99999
+  left: 0
+  top: 0
+  width: 100%; 
+  height: 100%
+  overflow: auto
+  background-color: rgb(0,0,0)
+  background-color: rgba(0,0,0,0.8)
+.italic
+  font-style: italic
+.modal-content 
+  background-color: #fefefe
+  margin: 2% auto
+  border-radius: 0px
+  width: 80%
+  text-align: center
+  display: flex
+  .close
+    color: white
+    float: right
+    font-size: 28px
+    font-weight: bold
+    padding: 0 10px
+  .close:hover, .close:focus
+      color: #aaa
+      text-decoration: none
+      cursor: pointer
+  .modal-content-3
+    display: none
+    background-color: #FAA819
+    img
+      height: 80px
+  .modal-content-2
+    width: 33.33333%
+    background-image: url('../img/background login-01.jpg')
+    background-size: 100% 100%
+    text-align: center
+    .modal-content-container
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      color: white
+      .modal-content-wrapper
+        width: 75%
+        margin: auto
+        h5
+          font-weight: bold
+          padding: 0 40px
+          line-height: 25px
+        .button-container
+          margin-top: 30px
+          button
+            display: block
+            width: 100%
+            color: white
+            padding-top: 15px
+            padding-bottom: 15px
+            font-weight: bold
+            border-width: 0px
+            border-radius: 5px
+            font-weight: bold
+            background-color: #FAA819
+        .modal-content-detail
+          margin-top: 80px
+  .modal-content-1
+    width: 66.66667%
+    .modal-content-wrapper
+      width: 83.33333%
+      margin: auto
+      .modal-logo
+        img
+          height: 100px
+    .social-button
+      margin-top: 30px
+      margin-bottom: 30px
+      .social-button-1, .social-button-2
+        width: 50%
+        float: left
+        button
+          display: block
+          width: 100%
+          color: white
+          padding-top: 15px
+          padding-bottom: 15px
+          font-weight: bold
+          border-width: 0px
+          border-radius: 5px
+          font-weight: bold
+      .social-button-1
+        padding-right: 20px
+        button
+          background-color: #1B75BB         
+      .social-button-2
+        padding-left: 20px
+        button
+          background-color: #ED1C24
+    .separator
+      width: 100%
+      text-align: center
+      border-bottom: 2px solid #ddd
+      line-height: 0.1em
+      margin: 10px 0 20px
+      span
+        background: white
+        padding: 0 20px
+        font-weight: bold
+    .sign-up-form
+      margin-top: 30px
+      input
+        width: 100%
+        height: 50px
+        border-radius: 5px
+        border: solid 2px #ddd
+        margin: 5px 0
+        padding: 0 20px
+      button
+        margin-top: 10px
+        display: block
+        width: 100%
+        color: white
+        padding-top: 15px
+        padding-bottom: 15px
+        font-weight: bold
+        border-width: 0px
+        border-radius: 5px
+        font-weight: bold
+        background-color: #FAA819
+    .forgot-pass
+      margin-top: 20px
+      a, a:hover
+        font-weight: bold
+        color: #555
+    .terms
+      margin-top: 20px
+      margin-bottom: 50px
+      span
+        font-size: smaller
+        font-weight: bold

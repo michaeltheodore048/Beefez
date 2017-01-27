@@ -13,8 +13,11 @@
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css">
     <!-- GOOGLE FONT -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+    <!-- DATA RANGE PICKER -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
     <!-- CUSTOM -->
     <link rel="stylesheet" href="./assets/css/style.css">
+
 
   </head>
   <body>
@@ -35,11 +38,28 @@
           </div>
         </div>
       </div>
+      <div class = "mobile-nav">
+        <div class = "search">
+          <button id = "search-button" type="button" class="transparent-button">
+            <span class="fa fa-search"></span>
+          </button>
+        </div>
+        <div class = "logo-wrap">
+          <a class="logo"><img src="assets/img/logo.png"></a>
+        </div>
+        <div class="pull-right text-left">
+          <button type="button" class="btn">LOGIN</button>
+        </div>
+      </div>
     </header>
-
+    <div class = "mobile-nav-2 clearfix">
+          <a>TOP VENDORS</a>
+          <a>TOP VENUE</a>
+          <a>BLOG</a>
+    </div>
     <div class="filter-wrapper">
       <div class="filter">
-        <span>SEARCH FOR</span>
+        <span style = "color:white">SEARCH FOR</span>
         <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" id="vendor-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Vendor
@@ -90,6 +110,7 @@
             <li><a>EO</a></li>
           </ul>
         </div>
+        <input class= "datepicker-field" type="text" name="daterange" value="Date"/>
         <button class="btn btn-primary">SEARCH</button>
       </div>
     </div>
@@ -134,10 +155,11 @@
       <div class = selected-filters>
         <p class = bold>ALL CATEGORIES <span style = "color:#bbb">EO IN </span>ALL COUNTRIES, ALL CITIES & ALL BUDGET</p>
       </div>
-      <div id = "content-wrapper" class = "clearfix">
+      <div id = "content-wrapper-2" class = "clearfix">
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -157,6 +179,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -176,6 +199,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -195,6 +219,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -214,6 +239,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -233,6 +259,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -252,6 +279,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -271,6 +299,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -290,6 +319,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -309,6 +339,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -328,6 +359,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -347,6 +379,7 @@
         <div class = "eo-wrapper">
           <div class = "eo-main">
             <div class = "eo-img">
+              <img src="./assets/img/eo.png">
             </div>
             <div class = "eo-name">
               <h3>Legacy</h3>
@@ -393,14 +426,61 @@
       </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script type="text/javascript" src="./assets/slick/slick.js"></script>
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 
     <script>
     $(document).ready(function(){
       $(".category-button").click(function(){
           $(".category-list").toggle();
+      });
+    });
+    $(window).resize(function() {
+      if (($(document).width()>=768)) { 
+        $(".filter-wrapper").show();
+      }
+      else
+      {
+        $(".filter-wrapper").hide();
+      }
+    });
+    $('#search-button').click(function() {
+      $('.filter-wrapper').toggle('slow', function() {
+    // Animation complete.
+      });
+    });
+    $(function() {
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end) {
+        $('#reportrange span').html(start.format('DD MMM YYYY') + ' - ' + end.format('DD MMM YYYY'));
+      }
+      $('input[name="daterange"]').daterangepicker({
+        locale: {
+            format: 'DD MMM YYYY'
+        },
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Tomorrow': [moment().add(1, 'days'), moment().add(1, 'days')],
+           'Next 7 Days': [moment(), moment().add(6, 'days')],
+           'Next 30 Days': [moment(), moment().add(29, 'days')],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Next Month': [moment().add(1, 'month').startOf('month'), moment().add(1, 'month').endOf('month')]
+          },
+        "autoApply": true,
+        "alwaysShowCalendars": true,
+        "minDate": "DD/MM/YYYY",
+        "maxDate": "DD/MM/YYYY",
+        "opens": "left"
+      },
+       function(start, end, label) {
+        console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
       });
     });
     </script>

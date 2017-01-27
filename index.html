@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css">
     <!-- GOOGLE FONT -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+    <!-- DATA RANGE PICKER -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
     <!-- CUSTOM -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -31,15 +33,32 @@
           <div class="nav-mobile">
             <button type="button" class="btn">EO</button>
             <button type="button" class="btn">BECOME A VENDOR</button>
-            <button type="button" class="btn">LOGIN</button>
+            <button id = "modalBtn" type="button" class="btn">LOGIN</button>
           </div>
         </div>
       </div>
+      <div class = "mobile-nav">
+        <div class = "search">
+          <button id = "search-button" type="button" class="transparent-button">
+            <span class="fa fa-search"></span>
+          </button>
+        </div>
+        <div class = "logo-wrap">
+          <a class="logo"><img src="assets/img/logo.png"></a>
+        </div>
+        <div class="pull-right text-left">
+          <button id = "mobileModalBtn" type="button" class="btn">LOGIN</button>
+        </div>
+      </div>
     </header>
-
+    <div class = "mobile-nav-2 clearfix">
+          <a>TOP VENDORS</a>
+          <a>TOP VENUE</a>
+          <a>BLOG</a>
+    </div>
     <div class="filter-wrapper">
       <div class="filter">
-        <span>SEARCH FOR</span>
+        <span style = "color:white">SEARCH FOR</span>
         <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" id="vendor-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Vendor
@@ -90,10 +109,63 @@
             <li><a>EO</a></li>
           </ul>
         </div>
+        <input class= "datepicker-field" type="text" name="daterange" value="Date"/>
         <button class="btn btn-primary">SEARCH</button>
       </div>
     </div>
-
+    <div id="login-modal" class="modal">
+      <div class="modal-content clearfix">
+        <div class = "modal-content-1">
+          <div class = "modal-content-wrapper">
+            <div class = "modal-logo">
+              <img src="assets/img/logo.png">
+            </div>
+            <div class = "login-text">
+              <span class = "italic">Create an account or login to continue</span>
+            </div>
+            <div class = "modal-form">
+              <div class = "social-button clearfix">
+                <div class = "social-button-1">
+                  <button><span>FACEBOOK</span></button>
+                </div>
+                <div class = "social-button-2">
+                  <button><span>GOOGLE +</span></button>
+                </div>
+              </div>
+              <h5 class = "separator"><span>OR</span></h5>
+              <div class = "sign-up-form">
+                <input type = "email" placeholder="Email" />
+                <input type = "password" placeholder="Password" />
+                <button><span>CREATE AN ACCOUNT OR LOGIN</span></button>
+              </div>
+              <div class = "forgot-pass">
+                <a href = "">Forgot Password?</a>
+              </div>
+              <div class = "terms">
+                <span class = "italic">Creating an account means you're okay with our Terms and Conditions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = "modal-content-2">
+          <span class="close">&times;</span>
+          <div class = "modal-content-container">
+            <div class ="modal-content-wrapper">
+              <h5>ARE YOU A VALUABLE VENDOR OR EO IN TOWN ?</h5>
+              <div class = "button-container">
+                <button><span>SIGN UP NOW</span></button>
+              </div>
+              <div class = "modal-content-detail italic">
+                <span>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = "modal-content-3">
+          <img src="assets/img/logo.png">
+        </div>
+      </div> 
+    </div>       
     <div class="body">
       <div id="home-slider" class="slider slick-dotted">
         <div>
@@ -130,7 +202,7 @@
         <li class="active"><a href="#">present event</a></li>
         <li><a href="#">upcoming event</a></li>
       </ul>
-      <div class="content-filter-wrapper">
+      <!--<div class="content-filter-wrapper">
         <div class = "content-filter width-wrap">
           <div class="dropdown right-border">
             <button class = "no-border-button dropdown-toggle" type="button" id="vendor-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -174,7 +246,7 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div>-->
       <div id = "content-wrapper" class = "clearfix">
         <div class = "event-main">
           <div class = "event-img">
@@ -281,18 +353,26 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script type="text/javascript" src="./assets/slick/slick.js"></script>
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 
     <script>
     let homeSliderHeight = document.getElementsByClassName('slide-img')[0].clientHeight
     $(window).scroll(function() {
       if ($(this).scrollTop() > homeSliderHeight+45){
         $('.filter-wrapper').addClass("sticky");
+        $('.mobile-nav-2').addClass("sticky");
       }
       else{
         $('.filter-wrapper').removeClass("sticky");
+        $('.mobile-nav-2').removeClass("sticky");
       }
     });
-
+    $(window).resize(function() {
+      if (($(document).width()>=768)) { 
+        $(".filter-wrapper").show();
+      }
+    });
     $('#home-slider').slick({
       dots: true,
       infinite: true,
@@ -300,6 +380,60 @@
       fade: true,
       cssEase: 'linear'
     });
+    $('#search-button').click(function() {
+      $('.filter-wrapper').toggle('slow', function() {
+    // Animation complete.
+      });
+    });
+    $(function() {
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end) {
+        $('#reportrange span').html(start.format('DD MMM YYYY') + ' - ' + end.format('DD MMM YYYY'));
+      }
+      $('input[name="daterange"]').daterangepicker({
+        locale: {
+            format: 'DD MMM YYYY'
+        },
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Tomorrow': [moment().add(1, 'days'), moment().add(1, 'days')],
+           'Next 7 Days': [moment(), moment().add(6, 'days')],
+           'Next 30 Days': [moment(), moment().add(29, 'days')],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Next Month': [moment().add(1, 'month').startOf('month'), moment().add(1, 'month').endOf('month')]
+          },
+        "autoApply": true,
+        "alwaysShowCalendars": true,
+        "minDate": "DD/MM/YYYY",
+        "maxDate": "DD/MM/YYYY",
+        "opens": "left"
+      },
+       function(start, end, label) {
+        console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+      });
+    });
+    var modal = document.getElementById('login-modal');
+    var btn = document.getElementById("modalBtn");
+    var mobilebtn = document.getElementById("mobileModalBtn");
+    var span = document.getElementsByClassName("close")[0];
+    mobilebtn.onclick = function() {
+        modal.style.display = "block";
+    }
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
     </script>
   </body>
 </html>
