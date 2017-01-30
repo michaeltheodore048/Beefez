@@ -947,6 +947,21 @@ header {
     margin: 0 auto; }
     #content-wrapper .event-main {
       width: 100%; }
+  .event-tab li {
+    width: 50% !important;
+    float: left !important; }
+    .event-tab li a {
+      font-size: small;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center !important;
+      background-image: none !important;
+      background-color: #FAA819;
+      color: #fff; }
+    .event-tab li a:hover {
+      background-color: #fc9516; }
+  .event-tab li.active a, .event-tab li.active a:hover {
+    background-color: #fc9516; }
   .top-fix {
     top: 108px !important;
     position: relative; }
